@@ -36,3 +36,8 @@ Sama seperti cassandra, query ini akan melakukan load data json yang sudah terte
 ### 6. streamlit run app.py
 jalankan dashboard dengan menggunakan IDE sesuai selera dan masuk ke http://localhost:8501 untuk membuka dashboard
 
+## Contoh Dashboard
+![{7D6629BC-1DEF-45CE-8FDF-D5A5BD0A8F75}](https://github.com/user-attachments/assets/84c3b5c3-2750-41a5-8fee-a49110257531)
+![{90756F52-B76C-4DAB-ACBC-5A3873D9B7FF}](https://github.com/user-attachments/assets/4a6ec023-6db6-4d1a-a543-ba547b56649f)
+
+
