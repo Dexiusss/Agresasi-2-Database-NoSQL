@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  cassandra:
+    image: cassandra:latest
+    container_name: cassandra-db1
+    ports:
+      - "9042:9042"
+    volumes:
+      - ./cassandra:/cassandra-data
+    networks:
+      - nosql-net
+    environment:
+      - CASSANDRA_CLUSTER_NAME=transaksi-cluster
+      - CASSANDRA_NUM_TOKENS=256
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo-db1
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongodb:/mongodb-data
+    networks:
+      - nosql-net
+
+networks:
+  nosql-net:
+    driver: bridge
