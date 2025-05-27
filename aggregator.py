@@ -1,3 +1,5 @@
+# Hanya digunakan untuk testing koneksi ke database
+
 from cassandra.cluster import Cluster
 from pymongo import MongoClient
 
