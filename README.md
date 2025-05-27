@@ -16,7 +16,7 @@ Dashboard dibuat dengan Streamlit untuk visualisasi data dan query interaktif.
 ## Langkah-Langkah Setup
 
 ### 1. Clone repository dan masuk ke folder project
-Setelah di clone, masuk ke docker dan change direktori (menggunakan cd <path ke folder kode>. 
+Setelah di clone, masuk ke docker dan change direktori (menggunakan 'cd {path ke folder kode}')
 
 ### 2. docker-compose up -d
 Perintah ini akan menjalankan seluruh container Docker sesuai konfigurasi di file docker-compose.yml.
