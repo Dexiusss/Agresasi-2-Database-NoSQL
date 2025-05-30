@@ -32,7 +32,8 @@ untuk keluar dari terimnal cassandra, gunakan 'exit'
 
 ### 5. mongoimport --host localhost --db groceries --collection pegawai --file mongodb/load_data1.json --jsonArray
 Sama seperti cassandra, query ini akan melakukan load data json yang sudah tertera dalam folder mongodb. Untuk mengakses terminal mongodb bisa menggunakan query docker exec -it mongodb-db1 mongosh
-**untuk indexing** gunakan query 
+
+ **untuk indexing** gunakan query 
 docker exec -i mongo-db2 mongoimport --db groceries --collection pegawai_optimized --file /mongodb-data/load_data1-optimized.json --jsonArray --drop
 dan kemudian berikan index menggunakan query
 docker exec -it mongo-db2 mongo groceries --eval 'db.pegawai_optimized.createIndex({ bulan: 1 });db.pegawai_optimized.createIndex({ divisi: 1 });db.pegawai_optimized.createIndex({ pelanggan_dilayani: -1 });'
