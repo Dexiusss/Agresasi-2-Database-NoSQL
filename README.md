@@ -16,7 +16,7 @@ Dashboard dibuat dengan Streamlit untuk visualisasi data dan query interaktif.
 ## Langkah-Langkah Setup
 
 ### 1. Clone repository dan masuk ke folder project
-Setelah di clone, masuk ke docker dan change direktori (menggunakan 'cd {path ke folder kode}')
+Setelah di clone, masuk ke docker dan change direktori (menggunakan cd {path ke folder kode})
 
 ### 2. docker-compose up -d
 Perintah ini akan menjalankan seluruh container Docker sesuai konfigurasi di file docker-compose.yml.
@@ -31,7 +31,12 @@ Query ini akan melakukan load data cql kedalam database cassandra. pastikan suda
 untuk keluar dari terimnal cassandra, gunakan 'exit'
 
 ### 5. mongoimport --host localhost --db groceries --collection pegawai --file mongodb/load_data1.json --jsonArray
-Sama seperti cassandra, query ini akan melakukan load data json yang sudah tertera dalam folder mongodb. Untuk mengakses terminal mongodb bisa menggunakan query 'docker exec -it mongodb-db1 mongosh'
+Sama seperti cassandra, query ini akan melakukan load data json yang sudah tertera dalam folder mongodb. Untuk mengakses terminal mongodb bisa menggunakan query docker exec -it mongodb-db1 mongosh
+**untuk indexing** gunakan query 
+docker exec -i mongo-db2 mongoimport --db groceries --collection pegawai_optimized --file /mongodb-data/load_data1-optimized.json --jsonArray --drop
+dan kemudian berikan index menggunakan query
+docker exec -it mongo-db2 mongo groceries --eval 'db.pegawai_optimized.createIndex({ bulan: 1 });db.pegawai_optimized.createIndex({ divisi: 1 });db.pegawai_optimized.createIndex({ pelanggan_dilayani: -1 });'
+
 
 ### 6. streamlit run app.py
 jalankan dashboard dengan menggunakan IDE sesuai selera dan masuk ke http://localhost:8501 untuk membuka dashboard
